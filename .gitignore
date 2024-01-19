@@ -1,0 +1,13 @@
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+Temp/*
+Obj/*
+Library/*
+Build/*
+Builds/*
+Assets/AssetStoreTools*
+MemoryCaptures/*
