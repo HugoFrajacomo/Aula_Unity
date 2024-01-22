@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Rotacionar.cs" />
     <Compile Include="Assets\Script\AparecerBloco.cs" />
+    <Compile Include="Assets\Script\Gravidade.cs" />
     <Compile Include="Assets\Script\Voar.cs" />
     <Compile Include="Assets\Script\MudarCor.cs" />
   </ItemGroup>
