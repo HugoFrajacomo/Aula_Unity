@@ -17,15 +17,18 @@ public class Chunk
     private List<Vector2> UV = new List<Vector2>();
     private GameObject go;
     private MeshFilter filter;
-    private MeshRenderer rende;
+    private MeshRenderer render;
+    private MeshCollider Colisao;
+    public Material textura;
 
     private ushort[] blocos;
 
 
-    public Chunk(ChunkPos pos)
+    public Chunk(ChunkPos pos, Material textura)
     {
         this.blocos = new ushort[largura*largura*altura];
         this.pos = pos;
+        this.textura = textura;
     }
 
     public void Gerar()
@@ -159,10 +162,14 @@ public class Chunk
         this.mesh.RecalculateNormals();  
 
         this.go = new GameObject();
+        this.go.transform.position = new Vector3(pos.x * largura, 0f, pos.z * largura);
+        this.go.layer = 6;
         this.filter = this.go.AddComponent<MeshFilter>();
-        this.rende = this.go.AddComponent<MeshRenderer>();
-
+        this.render = this.go.AddComponent<MeshRenderer>();
+        this.render.material = this.textura;
+        this.Colisao = this.go.AddComponent<MeshCollider>();
         this.filter.sharedMesh = this.mesh;
+        this.Colisao.sharedMesh = this.mesh;
 
     }
 
@@ -177,6 +184,7 @@ public class Chunk
         this.vertices.AddRange(QuadGeneretor.GetVertices(dir, new Vector3(x,y,z)));
         this.triangles.AddRange(QuadGeneretor.GetTriangles(num_vertices));
         this.UV.AddRange(Block.GetUVs(idBlock));
+
     }
 }
 
