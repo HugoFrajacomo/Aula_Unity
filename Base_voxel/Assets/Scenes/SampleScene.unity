@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 156045249}
   - component: {fileID: 156045255}
   - component: {fileID: 156045256}
+  - component: {fileID: 156045257}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -301,6 +302,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &156045257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156045248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53dcbf0a57dee2942998858c80f06432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &321653411
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563965938}
-  - component: {fileID: 563965937}
+  - component: {fileID: 563965939}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -410,19 +423,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &563965937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563965936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b20c1a57a222c70489f71809cd19084c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texturas: {fileID: 2100000, guid: 7789b1432e79f5a429020414b67b3e31, type: 2}
 --- !u!4 &563965938
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +438,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563965939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563965936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773db79b187b6c445894632059865b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personagem: {fileID: 156045257}
+  texturas: {fileID: 2100000, guid: 7789b1432e79f5a429020414b67b3e31, type: 2}
+  renderDistance: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

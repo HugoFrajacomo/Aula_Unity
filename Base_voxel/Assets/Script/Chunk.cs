@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Chunk
 {
-    private int largura = 16;
-    private int altura = 100;
+    public static readonly int largura = 16;
+    public static readonly int altura = 100;
     public int lado;
 
     private ChunkPos pos;
@@ -15,7 +15,7 @@ public class Chunk
     private List<Vector3> vertices = new List<Vector3>();
     private List<int> triangles = new List<int>();
     private List<Vector2> UV = new List<Vector2>();
-    private GameObject go;
+    public GameObject go;
     private MeshFilter filter;
     private MeshRenderer render;
     private MeshCollider Colisao;

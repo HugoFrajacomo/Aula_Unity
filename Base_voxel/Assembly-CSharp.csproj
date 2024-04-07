@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\Rotacionar.cs" />
     <Compile Include="Assets\Script\Chunk.cs" />
     <Compile Include="Assets\Script\AparecerBloco.cs" />
+    <Compile Include="Assets\Script\ChunkLoader.cs" />
     <Compile Include="Assets\Script\Gravidade.cs" />
     <Compile Include="Assets\Script\Voar.cs" />
     <Compile Include="Assets\Script\BloquearRotacao.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Script\MovCamera.cs" />
     <Compile Include="Assets\Script\MovPersonagem.cs" />
     <Compile Include="Assets\Script\ChunkPos.cs" />
+    <Compile Include="Assets\Script\PosicaoPersonagem.cs" />
     <Compile Include="Assets\Script\MudarCor.cs" />
   </ItemGroup>
   <ItemGroup>
