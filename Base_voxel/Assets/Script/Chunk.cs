@@ -41,9 +41,8 @@ public class Chunk
             {
                 for (int y = 0; y < altura; y++)
                 {
-                    float sinValue = Mathf.Sin((x /*+ pos.x*/) * 0.1f) + Mathf.Sin((y /*+ pos.y*/) * 0.2f) + Mathf.Sin((z /*+ pos.z*/) * 0.1f);
-                    nivel = Mathf.FloorToInt(sinValue * 5) + 20;
-
+                    //float sinValue = Mathf.Sin((x /*+ pos.x*/) * 0.1f) + Mathf.Sin((y /*+ pos.y*/) * 0.2f) + Mathf.Sin((z /*+ pos.z*/) * 0.1f);
+                    nivel = 20;
                     if (y <= nivel)
                     {
                         this.blocos[GetIndex(x, y, z)] = 1;
@@ -162,6 +161,8 @@ public class Chunk
         this.mesh.RecalculateNormals();  
 
         this.go = new GameObject();
+        this.go.name = this.ToString();
+
         this.go.transform.position = new Vector3(pos.x * largura, 0f, pos.z * largura);
         this.go.layer = 6;
         this.filter = this.go.AddComponent<MeshFilter>();
@@ -185,6 +186,11 @@ public class Chunk
         this.triangles.AddRange(QuadGeneretor.GetTriangles(num_vertices));
         this.UV.AddRange(Block.GetUVs(idBlock));
 
+    }
+
+    public override string ToString()
+    {
+        return $"Valor x: {this.pos.x}, Valor z: {this.pos.z}";
     }
 }
 

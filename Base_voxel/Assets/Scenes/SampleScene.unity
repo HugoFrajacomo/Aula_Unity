@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personagem: {fileID: 156045257}
   texturas: {fileID: 2100000, guid: 7789b1432e79f5a429020414b67b3e31, type: 2}
-  renderDistance: 5
+  renderDistance: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

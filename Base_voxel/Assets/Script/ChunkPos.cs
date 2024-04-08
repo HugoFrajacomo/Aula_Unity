@@ -23,15 +23,25 @@ public class ChunkPos
         return this.x ^ this.z;
     }
 
-    public static bool operator ==(ChunkPos a, ChunkPos b)
+    public static bool operator == (ChunkPos a, ChunkPos b)
     {
         return a.x == b.x && a.z == b.z;
     }
 
-    public static bool operator !=(ChunkPos a, ChunkPos b)
+    public static bool operator != (ChunkPos a, ChunkPos b)
     {
         return a.x != b.x || a.z != b.z;
     }
+
+    public override bool Equals(System.Object a)
+    {
+        if (a == null)
+            return false;
+
+        ChunkPos item = (ChunkPos)a;
+        return this == item;
+    }
+
     public static Direction Direcao (ChunkPos a, ChunkPos b)
     {
 
