@@ -7,6 +7,7 @@ public class ChunkLoader : MonoBehaviour
     public PosicaoPersonagem personagem;
     private ChunkPos chunkAntiga;
     public Material texturas;
+    public WorldGenerator worldGen = new WorldGenerator();
 
     public int renderDistance = 1;
     public Queue<ChunkPos> chunksToUnload = new Queue<ChunkPos>();
@@ -35,8 +36,7 @@ public class ChunkLoader : MonoBehaviour
         {
             for(int j = -renderDistance; j <= renderDistance; j++)
             {
-                chunk = new Chunk(new ChunkPos(inicial.x + i,inicial.z + j), texturas);
-                chunk.Gerar();
+                chunk = this.worldGen.GenerateChunk(new ChunkPos(inicial.x + i, inicial.z + j), texturas);
                 chunk.Construir();
                 chunks.Add(new ChunkPos(inicial.x + i, inicial.z + j), chunk);
             }
@@ -149,8 +149,8 @@ public class ChunkLoader : MonoBehaviour
             return;
         }
         ChunkPos chunkToLoad = chunksToLoad.Dequeue();
-        Chunk chunk = new Chunk(chunkToLoad, texturas);
-        chunk.Gerar();
+
+        Chunk chunk = this.worldGen.GenerateChunk(chunkToLoad, texturas);
         chunk.Construir();
 
         chunks.Add(chunkToLoad, chunk);

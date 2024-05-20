@@ -12,17 +12,7 @@ public class QuadTester : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.chunk = new Chunk(new ChunkPos (0,0), texturas);
-        this.chunk.Gerar();
-        this.chunk.Construir();
 
-        this.chunk = new Chunk(new ChunkPos(1, 0), texturas);
-        this.chunk.Gerar();
-        this.chunk.Construir();
-
-        this.chunk = new Chunk(new ChunkPos(2, 0), texturas);
-        this.chunk.Gerar();
-        this.chunk.Construir();
 
     }
 }

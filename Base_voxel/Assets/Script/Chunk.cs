@@ -6,7 +6,7 @@ using UnityEngine;
 public class Chunk
 {
     public static readonly int largura = 16;
-    public static readonly int altura = 100;
+    public static readonly int altura = 256;
     public int lado;
 
     private ChunkPos pos;
@@ -31,29 +31,9 @@ public class Chunk
         this.textura = textura;
     }
 
-    public void Gerar()
+    public void SetBlocks(ushort[] blocks)
     {
-        int nivel;
-
-        for (int x = 0; x< largura; x++)
-        {
-            for (int z = 0; z< largura; z++)
-            {
-                for (int y = 0; y < altura; y++)
-                {
-                    //float sinValue = Mathf.Sin((x /*+ pos.x*/) * 0.1f) + Mathf.Sin((y /*+ pos.y*/) * 0.2f) + Mathf.Sin((z /*+ pos.z*/) * 0.1f);
-                    nivel = 20;
-                    if (y <= nivel)
-                    {
-                        this.blocos[GetIndex(x, y, z)] = 1;
-                    }
-                    else
-                    {
-                        this.blocos[GetIndex(x, y, z)] = 0;
-                    }
-                }
-            }
-        }
+        this.blocos = (ushort[])(blocks.Clone());
     }
 
     public void Construir()
